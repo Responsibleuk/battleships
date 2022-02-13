@@ -1,26 +1,11 @@
-from pprint import pprint
+from random import randint
 
 # Game board - 10 x 10
 
-COMPUTER = [[" "] * 10 for x in range(10)]
-PLAYER = [[" "] * 10 for i in range(10)]
-
-def print_board(board):
-    print("  A B C D E F G H I J")
-    print("  +-+-+-+-+-+-+-+-+-+")
-    
-letters_to_numbers = {
-    'A': 0,
-    'B': 1,
-    'C': 2,
-    'D': 3,
-    'E': 4,
-    'F': 5,
-    'G': 6,
-    'H': 7,
-    'I': 8,
-    'J': 9
-}
+def create_board(board)
+    for i in range(10):
+        board.append ([" x "]*10)
+    return board
 
 # Starting game
 print ("Are you ready to defend our waters?")
