@@ -1,3 +1,27 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+from random import randint
+
+# Game board - 10 x 10
+
+board = []
+
+def print_board(board):
+	print (a b c d e f g h)
+	print ()
+
+
+# Starting game
+
+print "You have 50 torpedoes, choose your shots carefully"
+print_board(board)
+
+# Create ships
+
+
+# Create location
+
+
+# Hit or miss
+
+
+# Win or loose
+
