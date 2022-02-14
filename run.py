@@ -42,3 +42,7 @@ def create_ships(board):
         board[ship_row][ship_column] = "H"
 
 
+print("print board hidden board")
+print_board(HIDDEN_BOARD)
+print("print board guess board")
+print_board(GUESS_BOARD)
