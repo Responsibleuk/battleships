@@ -1,7 +1,7 @@
 from random import randint
 
 # Legend
-# "H" for placing ship
+# "*" for placing ship
 # " " for available space
 # "X" for hit battleship
 # "-" for missed shot
@@ -37,23 +37,22 @@ def create_ships(board):
    
     for ship in range(5):
         ship_row, ship_column = randint(0, 8), randint(0, 8)
-        while board[ship_row][ship_column] == "H":
+        while board[ship_row][ship_column] == "*":
             ship_row, ship_column = randint(0, 8), randint(0, 8)
-        board[ship_row][ship_column] = "H"
+        board[ship_row][ship_column] = "*"
 
 
 
 
 
-def get_ship_position():
- 
+def get_ship_location():
     row = input("Please enter a ship row 1-9\n")
     while row not in "123456789" or len(row) > 1 or row == "":
         validate_row(row)
         print("Please enter a valid row")
         row = input("Please enter a ship row 1-9\n")
-    column = input("Please enter a ship column A-I\n”).upper()
-    while column not in "ABCDEFGHI" or len(column) > 1 or column == "":
+    column = input("Please enter a ship column A-I\n").upper()
+    while column not in "ABCDEFGH" or len(column) > 1 or column == "":
         validate_column(column)
         print("Please enter a valid column")
         column = input("Please enter a ship column A-I\n").upper()
