@@ -73,12 +73,11 @@ def count_hit_ships(board):
 def start_game():
 
     create_ships(HIDDEN_BOARD)
-    create_ships(USER_BOARD)
+    create_ships(GUESS_BOARD)
 
-    print(“5 ships have invaded our territorial waters")
-    print("You have 20 torpedos to stop our Island being invaded”)
+    print("five ships have invaded our territorial waters")
     global username
-    username = input(“Sailor what is your name:\n")
+    username = input("Sailor enter your name:\n")
     while username == "" or username == " ":
         print("Sorry, Sailor what is your name.")
         username = input("Sailor what is your name:\n")
