@@ -18,7 +18,7 @@ letters_to_numbers = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4,
 
 
 numbers_to_letters = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E",
-                      5: "F", 6: "G", 7: "H", 8: "I" 9: "J"}
+                      5: "F", 6: "G", 7: "H", 8: "I", 9: "J"}
 
 def print_board(board):
     
