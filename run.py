@@ -6,9 +6,9 @@ from random import randint
 # "X" for hit battleship
 # "-" for missed shot
 # Code taken from Knowledge Mavens video, 
-HIDDEN_BOARD = [[" "] * 10 for x in range(8)]
+HIDDEN_BOARD = [[" "] * 10 for x in range(10)]
 
-GUESS_BOARD = [[" "] * 10 for x in range(8)]
+GUESS_BOARD = [[" "] * 10 for x in range(10)]
 
 
 
