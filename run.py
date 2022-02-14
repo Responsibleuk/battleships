@@ -1,7 +1,7 @@
 from random import randint
 
 # Legend
-# "@" for placing ship
+# "H" for placing ship
 # " " for available space
 # "X" for hit battleship
 # "-" for missed shot
@@ -29,5 +29,16 @@ def print_board(board):
     for row in board:
         print(row_number, "|".join(row))
         row_number += 1
+
+
+# Create ships
+def create_ships(board):
+    
+   
+    for ship in range(5):
+        ship_row, ship_column = randint(0, 9), randint(0, 9)
+        while board[ship_row][ship_column] == "H":
+            ship_row, ship_column = randint(0, 9), randint(0, 9)
+        board[ship_row][ship_column] = "H"
 
 
