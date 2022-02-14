@@ -46,18 +46,18 @@ def create_ships(board):
 
 
 
-def create_ship_location():
-	row = input(‘Enter row’)
-	while row not in ’12345678910’ :
-		print(‘try again, enter row 1-10’)
-		row = input(‘Enter row’)
+# def create_ship_location():
+# 	row = input(‘Enter row’)
+# 	while row not in ’12345678910’ :
+# 		print(‘try again, enter row 1-10’)
+# 		row = input(‘Enter row’)
 
-Column = input(‘Enter column’)
-	while row not in ’ABCDEFGH’ :
-		print(‘try again, enter column A-J’)
-		Column = input(‘Enter column’)
+# Column = input(‘Enter column’)
+# 	while row not in ’ABCDEFGH’ :
+# 		print(‘try again, enter column A-J’)
+# 		Column = input(‘Enter column’)
 
-Return int(row) - 1, letters_to_numbers[column]
+# Return int(row) - 1, letters_to_numbers[column]
 
 print("print board hidden board")
 print_board(HIDDEN_BOARD)
