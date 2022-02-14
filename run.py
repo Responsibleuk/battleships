@@ -13,12 +13,12 @@ GUESS_BOARD = [[" "] * 10 for x in range(10)]
 
 
 
-letters_to_numbers = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4,
-                      "F": 5, "G": 6, "H": 7, "I": 8, "J": 9}
+letters_to_numbers = {"A": 0 , "B": 1 , "C": 2 , "D": 3 , "E": 4 ,
+                      "F": 5 , "G": 6 , "H": 7 , "I": 8 , "J": 9 }
 
 
-numbers_to_letters = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E",
-                      5: "F", 6: "G", 7: "H", 8: "I", 9: "J"}
+numbers_to_letters = {0 : "A", 1 : "B", 2 : "C", 3 : "D", 4 : "E",
+                      5 : "F", 6 : "G", 7 : "H", 8 : "I", 9 : "J"}
 
 def print_board(board):
     
@@ -41,6 +41,23 @@ def create_ships(board):
             ship_row, ship_column = randint(0, 9), randint(0, 9)
         board[ship_row][ship_column] = "H"
 
+
+
+
+
+
+def create_ship_location():
+	row = input(‘Enter row’)
+	while row not in ’12345678910’ :
+		print(‘try again, enter row 1-10’)
+		row = input(‘Enter row’)
+
+Column = input(‘Enter column’)
+	while row not in ’ABCDEFGH’ :
+		print(‘try again, enter column A-J’)
+		Column = input(‘Enter column’)
+
+Return int(row) - 1, letters_to_numbers[column]
 
 print("print board hidden board")
 print_board(HIDDEN_BOARD)
