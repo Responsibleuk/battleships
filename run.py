@@ -5,6 +5,7 @@ from random import randint
 # " " for available space
 # "X" for hit battleship
 # "-" for missed shot
+
 # Code taken from Knowledge Mavens video, 
 HIDDEN_BOARD = [[" "] * 9 for x in range(9)]
 
@@ -52,20 +53,36 @@ def get_ship_location():
         print("Please enter a valid row")
         row = input("Please enter a ship row 1-9\n")
     column = input("Please enter a ship column A-I\n").upper()
-    while column not in "ABCDEFGH" or len(column) > 1 or column == "":
+    while column not in "ABCDEFGHI" or len(column) > 1 or column == "":
         validate_column(column)
         print("Please enter a valid column")
         column = input("Please enter a ship column A-I\n").upper()
     return int(row) - 1, letters_to_numbers[column]
 
 
+def count_hit_ships(board):
+    count = 0
+    for row in board:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
 
-# Column = input(‘Enter column’)
-# 	while row not in ’ABCDEFGH’ :
-# 		print(‘try again, enter column A-J’)
-# 		Column = input(‘Enter column’)
+# Begin game and enter name
 
-# Return int(row) - 1, letters_to_numbers[column]
+def start_game():
+
+    create_ships(HIDDEN_BOARD)
+    create_ships(USER_BOARD)
+
+    print(“5 ships have invaded our territorial waters")
+    print("You have 20 torpedos to stop our Island being invaded”)
+    global username
+    username = input(“Sailor what is your name:\n")
+    while username == "" or username == " ":
+        print("Sorry, Sailor what is your name.")
+        username = input("Sailor what is your name:\n")
+
 
 print("print board hidden board")
 print_board(HIDDEN_BOARD)
