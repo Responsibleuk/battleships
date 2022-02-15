@@ -7,13 +7,14 @@ from pprint import pprint
 # "X" for hit battleship
 # "-" for missed shot
 
-# Code taken from Knowledge Mavens video,
+# Code based on Knowledge Mavens videos, link in README
 # LENGTH_OF_SHIPS = [3,6,3,4,5]
 
+# create list of 9 spaces, 9 times
 HIDDEN_BOARD = [[" "] * 9 for x in range(9)]
-
+# create list of 9 spaces, 9 times
 GUESS_BOARD = [[" "] * 9 for x in range(9)]
-
+# create list of 9 spaces, 9 times
 PLAYER_BOARD = [[" "] * 9 for x in range(9)]
 
 letters_to_numbers = {
@@ -123,7 +124,7 @@ global user_score
 
 while turns > 0:
     print("{username}'s Board")
-    print(USER_BOARD)
+    print(PLAYER_BOARD)
     print("Computer's Board")
     print_board(GUESS_BOARD)
     row, column = get_ship_location()
@@ -133,7 +134,7 @@ while turns > 0:
         print("Congratulations {username}, Direct hit, congratulations")
         GUESS_BOARD[row][column] = "X"
         turns -= 1
-        computer_guess(USER_BOARD)
+        computer_guess(PLAYER_BOARD)
         user_score = 1
 
     else:
@@ -141,7 +142,7 @@ while turns > 0:
         print("Better luck next time {username}")
         GUESS_BOARD[row][column] = "-"
         turns -= 1
-        computer_guess(USER_BOARD)
+        computer_guess(PLAYER_BOARD)
 
     if turns == 10:
         print("You have used half your torpedoes")
