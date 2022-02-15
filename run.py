@@ -106,37 +106,37 @@ global user_score
 
 
 while turns > 0:
-        print("{username}'s Board")
-        print(USER_BOARD)
-        print("Computer's Board")
-        print_board(GUESS_BOARD)
-        row, column = get_ship_location()
-        if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
-            prRed("Don't waste a shot you've already missed")
-        elif HIDDEN_BOARD[row][column] == "*":
-            print("Congratulations {username}, Direct hit, congratulations")
-            GUESS_BOARD[row][column] = "X"
-            turns -= 1
-            computer_guess(USER_BOARD)
-            user_score += 1
+    print("{username}'s Board")
+    print(USER_BOARD)
+    print("Computer's Board")
+    print_board(GUESS_BOARD)
+    row, column = get_ship_location()
+    if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
+        print("Don't waste a shot you've already missed")
+    elif HIDDEN_BOARD[row][column] == "*":
+        print("Congratulations {username}, Direct hit, congratulations")
+        GUESS_BOARD[row][column] = "X"
+        turns -= 1
+        computer_guess(USER_BOARD)
+        user_score += 1
             
-         else:
-            print("Oh no, you missed")
-            print("Better luck next time {username}")
-            GUESS_BOARD[row][column] = "-"
-            turns -= 1
-            computer_guess(USER_BOARD)
+    else:
+        print("Oh no, you missed")
+        print("Better luck next time {username}")
+        GUESS_BOARD[row][column] = "-"
+        turns -= 1
+        computer_guess(USER_BOARD)
 
-        if turns == 10:
-            print("You have used half your torpedoes")
+    if turns == 10:
+        print("You have used half your torpedoes")
 
-        if turns == 19:
-            print("Last shot, make it count")
+    if turns == 19:
+        print("Last shot, make it count")
 
-        if count_hit_ships(GUESS_BOARD) == 5:
-            print ("{username} your country owes you a debt of grattitude")
-            print ("you have sunk all of the battleships, and saved our country from certain invasion")
-            print("")
+    if count_hit_ships(GUESS_BOARD) == 5:
+        print ("{username} your country owes you a debt of grattitude")
+        print ("you have sunk all of the battleships, and saved our country from certain invasion")
+        print("")
 
 print("print board hidden board")
 print_board(HIDDEN_BOARD)
