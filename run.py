@@ -139,42 +139,67 @@ def start():
 
 def start_game():
     turns = 20
-    global user_score
+    # global user_score
 
 
+    # while turns > 0:
+        
+    #     print_board(GUESS_BOARD)
+    #     print_board(HIDDEN_BOARD)
+    #     row, column = get_ship_location()
+    #     if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
+    #         print("Don't waste a shot you've already missed")
+    #     elif HIDDEN_BOARD[row][column] == "*":
+    #         print("Congratulations {username}, Direct hit, congratulations")
+    #         GUESS_BOARD[row][column] = "X"
+    #         turns -= 1
+    #         user_score = 1
+
+    #     else:
+    #         print("Oh no, you missed")
+    #         print("Better luck next time {username}")
+    #         GUESS_BOARD[row][column] = "-"
+    #         turns -= 1
+
+    if __name__ == "__main__":
+    create_ships(HIDDEN_BOARD)
+    turns = 10
     while turns > 0:
-        
+        print('Guess a battleship location')
         print_board(GUESS_BOARD)
-        print_board(HIDDEN_BOARD)
         row, column = get_ship_location()
-        if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
-            print("Don't waste a shot you've already missed")
-        elif HIDDEN_BOARD[row][column] == "*":
-            print("Congratulations {username}, Direct hit, congratulations")
-            GUESS_BOARD[row][column] = "X"
-            turns -= 1
-            user_score = 1
-
+        if GUESS_BOARD[row][column] == "-":
+            print("You guessed that one already.")
+        elif HIDDEN_BOARD[row][column] == "X":
+            print("Hit")
+            GUESS_BOARD[row][column] = "X" 
+            turns -= 1  
         else:
-            print("Oh no, you missed")
-            print("Better luck next time {username}")
-            GUESS_BOARD[row][column] = "-"
-            turns -= 1
+            print("MISS!")
+            GUESS_BOARD[row][column] = "-"   
+            turns -= 1     
+        if count_hit_ships(GUESS_BOARD) == 5:
+            print("You win!")
+            break
         
 
-        if turns == 10:
-            print("You have used half your torpedoes")
+        # if turns == 10:
+        #     print("You have used half your torpedoes")
 
-        if turns == 1:
-            print("Last shot, make it count")
+        # if turns == 1:
+        #     print("Last shot, make it count")
 
-        if count_hit_ships(GUESS_BOARD) == 5:
-            print("{username} your country owes you a debt of grattitude")
-            print("you have sunk all of the battleships, and saved our country from certain invasion")
-            print("Game over")
+        # if count_hit_ships(GUESS_BOARD) == 5:
+        #     print("{username} your country owes you a debt of grattitude")
+        #     print("you have sunk all of the battleships, and saved our country from certain invasion")
+        #     print("Game over")
 
-        if count_hit_ships(PLAYER_BOARD) == 5:
-            print("Sorry {username}, you've lost")
+        # if count_hit_ships(PLAYER_BOARD) == 5:
+        #     print("Sorry {username}, you've lost")
+
+        print("You have " + str(turns) + " turns left")
+        if turns == 0:
+            print("You ran out of turns")
 
         # continue_playing = input("Do you want to continue playing? y/n\n")
         #     while continue_playing not in continue_playing_choice:
