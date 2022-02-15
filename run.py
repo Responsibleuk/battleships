@@ -1,4 +1,5 @@
 from random import randint
+from pprint import pprint
 
 # Legend
 # "*" for placing ship
