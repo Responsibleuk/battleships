@@ -172,7 +172,7 @@ def start_game():
             row, column = get_ship_location()
             if GUESS_BOARD[row][column] == "-":
                 print("You guessed that one already.")
-            elif HIDDEN_BOARD[row][column] == "X":
+            elif HIDDEN_BOARD[row][column] == "*":
                 print("Hit")
                 GUESS_BOARD[row][column] = "X" 
                 turns -= 1  
