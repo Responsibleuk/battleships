@@ -80,39 +80,21 @@ def get_ship_location():
     return int(row) - 1, letters_to_numbers[column]
 
 # check
-
-def validate_row(values):
-    """
-    If values entered not an interger between 1-8 error message printed
-    """
-    try:
-        [int(value) for value in values]
-        if int(values) < 1 or int(values) > 8:
-            print(
-                f"Number between 1-8 required, you provided '{values}'."
-            )
-    except:
-        print(f"Sorry number between 1-8 required, please try again.\n")
-        return False
-
-    return True
-
-
 def validate_column(values):
     try:
         if values not in letters_to_numbers:
-            print("Please choose a valid column")
+        print("Please choose a valid column")
     except:
         print("Please choose a valid column\n")
         return False
     return True
 
-def validate_column(values):
+def validate_row(values):
     try:
         if values not in letters_to_numbers:
-            print("Please choose a valid row")
+        print("Please choose a valid row")
     except:
-        print("Please choose a valid column row.\n")
+        print("Please choose a valid row\n")
         return False
     return True
 
