@@ -50,7 +50,7 @@ def print_board(board):
     row_number = 1
     for row in board:
         print(row_number, "|".join(row))
-        row_number = 1
+        row_number += 1
 
 
 # Create ships
@@ -77,18 +77,29 @@ def get_ship_location():
     return int(row) - 1, letters_to_numbers[column]
 
 
-def validate_continue_playing(values):
+def validate_column(values):
     
     try:
+        [int(value) for value in values]
         if values not in continue_playing_options:
-            print(
-                f"Please enter y/n, you provided '{values}'."
-                )
+            print("Please number between 1-9 '{values}'.")
     except:
-        print(f"Sorry y/n required, please try again.\n")
+        print("Please number between 1-9, please try again.\n")
         return False
-
     return True
+
+def validate_row(values):
+    
+    try:
+        [int(value) for value in values]
+        if values not in continue_playing_options:
+            print("Please enter letter between A and I '{values}'.")
+    except:
+        print("Please enter letter between A and I, please try again.\n")
+        return False
+    return True
+
+
 
 
 def count_hit_ships(board):
