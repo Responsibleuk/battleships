@@ -138,7 +138,7 @@ def main():
         username = input("Sailor what is your name:\n")
 
 def start_game():
-    turns = 20
+    
     # global user_score
 
 
@@ -162,9 +162,10 @@ def start_game():
     #         turns -= 1
 
     
-        create_ships(HIDDEN_BOARD)
-        turns = 10
-        while turns > 0:
+    turns = 20
+    global user_score
+    
+    while turns > 0:
             print('Guess a battleship location')
             print_board(GUESS_BOARD)
             row, column = get_ship_location()
