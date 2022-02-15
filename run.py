@@ -14,6 +14,7 @@ HIDDEN_BOARD = [[" "] * 9 for x in range(9)]
 
 GUESS_BOARD = [[" "] * 9 for x in range(9)]
 
+PLAYER_BOARD = [[" "] * 9 for x in range(9)]
 
 letters_to_numbers = {
     "A": 0,
@@ -75,25 +76,18 @@ def get_ship_location():
     return int(row) - 1, letters_to_numbers[column]
 
 
-# check
-# def validate_column(values):
-#     try:
-#         if values not in letters_to_numbers:
-#             print("Please choose a valid column")
-    # except:
-    #     print("Please choose a valid column\n")
-    # return False
-    # return True
+def validate_continue_playing(values):
+    
+    try:
+        if values not in continue_playing_options:
+            print(
+                f"Please enter y/n, you provided '{values}'."
+                )
+    except:
+        print(f"Sorry y/n required, please try again.\n")
+        return False
 
-
-# def validate_row(values):
-#     try:
-#         if values not in letters_to_numbers:
-#             print("Please choose a valid row")
-    # except:
-    #     print("Please choose a valid row\n")
-    # return False
-    # return True
+    return True
 
 
 def count_hit_ships(board):
@@ -115,6 +109,7 @@ def start_game():
 
     print("five ships have invaded our territorial waters")
     print("You need to shoot well to save our island")
+
     global username
     username = input("Sailor what is your name:\n")
     while username == "" or username == " ":
@@ -156,12 +151,10 @@ while turns > 0:
 
     if count_hit_ships(GUESS_BOARD) == 5:
         print("{username} your country owes you a debt of grattitude")
-        print(
-            "you have sunk all of the battleships, and saved our country from certain invasion"
-        )
+        print("you have sunk all of the battleships, and saved our country from certain invasion")
         print("Game over")
 
-    if count_hit_ships(USER_BOARD) == 5:
+    if count_hit_ships(PLAYER_BOARD) == 5:
         print("Sorry {username}, you've lost")
 
         # continue_playing = input("Do you want to continue playing? y/n\n")
