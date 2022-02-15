@@ -120,7 +120,7 @@ while turns > 0:
         computer_guess(USER_BOARD)
         user_score += 1
             
-    else:
+    else
         print("Oh no, you missed")
         print("Better luck next time {username}")
         GUESS_BOARD[row][column] = "-"
@@ -137,6 +137,28 @@ while turns > 0:
         print ("{username} your country owes you a debt of grattitude")
         print ("you have sunk all of the battleships, and saved our country from certain invasion")
         print("")
+
+    if count_hit_ships(USER_BOARD) == 5:
+        print("Sorry {username}, you've lost")
+            
+        if count_hit_ships(GUESS_BOARD) < 5:
+
+        continue_playing = input("Do you want to continue playing? y/n\n")
+            while continue_playing not in continue_playing_choice:
+                validate_continue_playing(continue_playing)
+                continue_playing = input(
+                    "Do you want to continue playing? y/n\n")
+            if continue_playing == "y" or continue_playing == "yes":
+                print("You have decided to continue playing the game.")
+                continue
+            elif continue_playing == "n" or continue_playing == "no":
+                print("You have decided to finish playing, the game is now over")
+            else:
+                print("Sorry, please can you enter y/n")
+                continue_playing = input("Do you want to continue playing? y/n \n")
+
+
+
 
 print("print board hidden board")
 print_board(HIDDEN_BOARD)
