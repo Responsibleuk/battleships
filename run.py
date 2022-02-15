@@ -116,7 +116,7 @@ def count_hit_ships(board):
 def start():
 
     create_ships(HIDDEN_BOARD)
-    create_ships(GUESS_BOARD)
+    create_ships(PLAYER_BOARD)
 
     print("five ships have invaded our territorial waters")
     print("You need to shoot well to save our island")
@@ -134,7 +134,6 @@ def start_game():
 
     while turns > 0:
         print(PLAYER_BOARD)
-        print_board(GUESS_BOARD)
         row, column = get_ship_location()
         if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
             print("Don't waste a shot you've already missed")
