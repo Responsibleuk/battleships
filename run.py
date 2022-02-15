@@ -103,6 +103,7 @@ def start_game():
         username = input("Sailor what is your name:\n")
 
 turns = 20
+global user_score
 
 
 while turns > 0:
@@ -118,7 +119,19 @@ while turns > 0:
             GUESS_BOARD[row][column] = "X"
             turns -= 1
             computer_guess(USER_BOARD)
-            user_score += 1
+            user_score += 
+            
+         else:
+            print("Oh no, you missed")
+            print("Better luck next time {username}")
+            GUESS_BOARD[row][column] = "-"
+            turns -= 1
+            computer_guess(USER_BOARD)
+            
+        if count_hit_ships(GUESS_BOARD) == 5:
+            print ("{username} your country owes you a debt of grattitude")
+            print ("you have sunk all of the battleships, and saved our country from certain invasion")
+            print("")
 
 print("print board hidden board")
 print_board(HIDDEN_BOARD)
