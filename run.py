@@ -75,20 +75,20 @@ def get_ship_location():
 
 
 # check
-def validate_column(values):
-    try:
-        if values not in letters_to_numbers:
-            print("Please choose a valid column")
+# def validate_column(values):
+#     try:
+#         if values not in letters_to_numbers:
+#             print("Please choose a valid column")
     # except:
     #     print("Please choose a valid column\n")
     # return False
     # return True
 
 
-def validate_row(values):
-    try:
-        if values not in letters_to_numbers:
-            print("Please choose a valid row")
+# def validate_row(values):
+#     try:
+#         if values not in letters_to_numbers:
+#             print("Please choose a valid row")
     # except:
     #     print("Please choose a valid row\n")
     # return False
