@@ -14,12 +14,31 @@ GUESS_BOARD = [[" "] * 9 for x in range(9)]
 
 
 
-letters_to_numbers = {"A": 0 , "B": 1 , "C": 2 , "D": 3 , "E": 4 ,
-                      "F": 5 , "G": 6 , "H": 7 , "I": 8}
+letters_to_numbers = 
+{
+    "A": 0, 
+    "B": 1, 
+    "C": 2, 
+    "D": 3, 
+    "E": 4,
+    "F": 5, 
+    "G": 6, 
+    "H": 7, 
+    "I": 8}
 
 
-numbers_to_letters = {0 : "A", 1 : "B", 2 : "C", 3 : "D", 4 : "E",
-                      5 : "F", 6 : "G", 7 : "H", 8 : "I"}
+numbers_to_letters = 
+{
+    0: "A", 
+    1: "B", 
+    2: "C", 
+    3: "D", 
+    4: "E", 
+    5: "F", 
+    6: "G", 
+    7: "H", 
+    8: "I"
+    }
 
 def print_board(board):
     
@@ -76,10 +95,11 @@ def start_game():
     create_ships(GUESS_BOARD)
 
     print("five ships have invaded our territorial waters")
+    print("You need to shoot well to save our island")
     global username
-    username = input("Sailor enter your name:\n")
+    username = input("Sailor what is your name:\n")
     while username == "" or username == " ":
-        print("Sorry, Sailor what is your name.")
+        print("Sailor please enter your name.")
         username = input("Sailor what is your name:\n")
 
 
