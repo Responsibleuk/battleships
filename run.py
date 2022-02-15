@@ -17,6 +17,16 @@ GUESS_BOARD = [[" "] * 9 for x in range(9)]
 # create list of 9 spaces, 9 times
 PLAYER_BOARD = [[" "] * 9 for x in range(9)]
 
+
+def print_board(board):
+
+    print("  A B C D E F G H I")
+    print("  ----------------")
+    row_number = 1
+    for row in board:
+        print(row_number, "|".join(row))
+        row_number += 1
+
 letters_to_numbers = {
     "A": 0,
     "B": 1,
@@ -44,14 +54,14 @@ numbers_to_letters = {
 
 user_score = 0
 
-def print_board(board):
+# def print_board(board):
 
-    print("  A B C D E F G H I")
-    print("  ----------------")
-    row_number = 1
-    for row in board:
-        print(row_number, "|".join(row))
-        row_number += 1
+#     print("  A B C D E F G H I")
+#     print("  ----------------")
+#     row_number = 1
+#     for row in board:
+#         print(row_number, "|".join(row))
+#         row_number += 1
 
 
 # Create ships
