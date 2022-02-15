@@ -145,6 +145,7 @@ def start_game():
     while turns > 0:
         
         print_board(GUESS_BOARD)
+        print_board(HIDDEN_BOARD)
         row, column = get_ship_location()
         if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
             print("Don't waste a shot you've already missed")
