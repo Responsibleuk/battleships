@@ -123,9 +123,7 @@ global user_score
 
 
 while turns > 0:
-    print("{username}'s Board")
     print(PLAYER_BOARD)
-    print("Computer's Board")
     print_board(GUESS_BOARD)
     row, column = get_ship_location()
     if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
@@ -134,7 +132,6 @@ while turns > 0:
         print("Congratulations {username}, Direct hit, congratulations")
         GUESS_BOARD[row][column] = "X"
         turns -= 1
-        computer_guess(PLAYER_BOARD)
         user_score = 1
 
     else:
@@ -142,7 +139,7 @@ while turns > 0:
         print("Better luck next time {username}")
         GUESS_BOARD[row][column] = "-"
         turns -= 1
-        computer_guess(PLAYER_BOARD)
+        
 
     if turns == 10:
         print("You have used half your torpedoes")
