@@ -14,8 +14,7 @@ GUESS_BOARD = [[" "] * 9 for x in range(9)]
 
 
 
-letters_to_numbers = 
-{
+letters_to_numbers = {
     "A": 0, 
     "B": 1, 
     "C": 2, 
@@ -24,11 +23,11 @@ letters_to_numbers =
     "F": 5, 
     "G": 6, 
     "H": 7, 
-    "I": 8}
+    "I": 8
+}
 
 
-numbers_to_letters = 
-{
+numbers_to_letters = {
     0: "A", 
     1: "B", 
     2: "C", 
@@ -38,7 +37,7 @@ numbers_to_letters =
     6: "G", 
     7: "H", 
     8: "I"
-    }
+}
 
 def print_board(board):
     
@@ -127,7 +126,7 @@ while turns > 0:
             GUESS_BOARD[row][column] = "-"
             turns -= 1
             computer_guess(USER_BOARD)
-            
+
         if count_hit_ships(GUESS_BOARD) == 5:
             print ("{username} your country owes you a debt of grattitude")
             print ("you have sunk all of the battleships, and saved our country from certain invasion")
