@@ -154,7 +154,7 @@ def start_game():
         if turns == 10:
             print("You have used half your torpedoes")
 
-        if turns == 19:
+        if turns == 1:
             print("Last shot, make it count")
 
         if count_hit_ships(GUESS_BOARD) == 5:
