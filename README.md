@@ -1,31 +1,41 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## Introductions
 
-Welcome Responsibleuk,
+Battleship was originally designed as a guessing game for two players. It is played on ruled grids (paper or board) on which each player's fleet of battleships are marked. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The locations of the battleships are concealed from the other player. 
 
-## Reminders
+Players alternate turns firing at the other player's ships, by calling the grid location using columns and rows.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+The objective of the game is to destroy the opposing player's fleet.
 
-## Creating the Heroku app
+The game was first developed in world war 1 where users used pen and paper, it has since been turned into a board game and computer game in this project I will create a battleship game built in python3 where user plays against the computer.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+ 
+## Flow diagrams
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Functions
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+Build Board
+Create Ships
+Create location of ships
+Torpedo function
+Hit or miss
+Sink boat - yes or no
+Run out of turns
+Sink all boats
+Win or loose
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+## Development
 
-## Constraints
+I used google to explore and YouTube
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Credits
 
------
-Happy coding!
+## Testing
+
+## Deployment
+This project was deployed using Code Institute's mock terminal for Heroku.
+The steps for deployment are as follows:
+* Fork or clone this repository
+* Create a new Heroku app
