@@ -115,7 +115,7 @@ def count_hit_ships(board):
     count = 0
     for row in board:
         for column in row:
-            if column == "X":
+            if column == "*":
                 count = 1
     return count
 
@@ -125,8 +125,8 @@ def count_hit_ships(board):
 
 def start():
 
-    create_ships(HIDDEN_BOARD)
-    create_ships(PLAYER_BOARD)
+    # create_ships(HIDDEN_BOARD)
+    # create_ships(PLAYER_BOARD)
 
     print("five ships have invaded our territorial waters")
     print("You need to shoot well to save our island")
