@@ -164,7 +164,7 @@ def start_game():
     
     turns = 20
     global user_score
-    
+
     while turns > 0:
             print('Guess a battleship location')
             print_board(GUESS_BOARD)
@@ -198,9 +198,9 @@ def start_game():
         # if count_hit_ships(PLAYER_BOARD) == 5:
         #     print("Sorry {username}, you've lost")
 
-        print("You have " + str(turns) + " turns left")
-        if turns == 0:
-            print("You ran out of turns")
+            print("You have " + str(turns) + " turns left")
+            if turns == 0:
+                print("You ran out of turns")
 
         # continue_playing = input("Do you want to continue playing? y/n\n")
         #     while continue_playing not in continue_playing_choice:
