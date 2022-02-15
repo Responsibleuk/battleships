@@ -120,7 +120,7 @@ while turns > 0:
         computer_guess(USER_BOARD)
         user_score += 1
             
-    else
+    else:
         print("Oh no, you missed")
         print("Better luck next time {username}")
         GUESS_BOARD[row][column] = "-"
