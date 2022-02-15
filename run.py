@@ -123,7 +123,7 @@ def count_hit_ships(board):
 # Begin game and enter name
 
 
-def start():
+def main():
 
     # create_ships(HIDDEN_BOARD)
     # create_ships(PLAYER_BOARD)
@@ -161,7 +161,7 @@ def start_game():
     #         GUESS_BOARD[row][column] = "-"
     #         turns -= 1
 
-    if __name__ == "__main__":
+    
         create_ships(HIDDEN_BOARD)
         turns = 10
         while turns > 0:
@@ -215,7 +215,7 @@ def start_game():
         #         print("Sorry, please can you enter y/n")
         #         continue_playing = input("Do you want to continue playing? y/n \n")
 
-start()
+main()
 start_game()
 
 
