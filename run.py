@@ -167,6 +167,7 @@ def start_game():
 
     while turns > 0:
             print('Guess a battleship location')
+            print_board(HIDDEN_BOARD)
             print_board(GUESS_BOARD)
             row, column = get_ship_location()
             if GUESS_BOARD[row][column] == "-":
