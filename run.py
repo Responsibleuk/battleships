@@ -102,6 +102,23 @@ def start_game():
         print("Sailor please enter your name.")
         username = input("Sailor what is your name:\n")
 
+turns = 20
+
+
+while turns > 0:
+        print("{username}'s Board")
+        print(USER_BOARD)
+        print("Computer's Board")
+        print_board(GUESS_BOARD)
+        row, column = get_ship_location()
+        if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
+            prRed("Don't waste a shot you've already missed")
+        elif HIDDEN_BOARD[row][column] == "*":
+            prGreen(f"Congratulations {username}, Direct hit, congratulations")
+            GUESS_BOARD[row][column] = "X"
+            turns -= 1
+            computer_guess(USER_BOARD)
+            user_score += 1
 
 print("print board hidden board")
 print_board(HIDDEN_BOARD)
