@@ -42,6 +42,7 @@ numbers_to_letters = {
     8: "I",
 }
 
+user_score = 0
 
 def print_board(board):
 
@@ -64,40 +65,38 @@ def create_ships(board):
 
 
 def get_ship_location():
-    row = input("Please enter a ship row 1-9\n")
-    while row not in "123456789" or len(row) > 1 or row == "":
-        validate_row(row)
-        print("Please enter a valid row")
-        row = input("Please enter a ship row 1-9\n")
-    column = input("Please enter a ship column A-I\n").upper()
-    while column not in "ABCDEFGHI" or len(column) > 1 or column == "":
-        validate_column(column)
-        print("Please enter a valid column")
-        column = input("Please enter a ship column A-I\n").upper()
+    row = input("Enter the row of the ship: ").upper()
+    while row not in "123456789":
+        print('Not an appropriate choice, please select a valid row')
+        row = input("Enter the row of the ship: ").upper()
+    column = input("Enter the column of the ship: ").upper()
+    while column not in "ABCDEFGHI":
+        print('Not an appropriate choice, please select a valid column')
+        column = input("Enter the column of the ship: ").upper()
     return int(row) - 1, letters_to_numbers[column]
 
 
-def validate_column(values):
+# def validate_column(values):
     
-    try:
-        [int(value) for value in values]
-        if values not in continue_playing_options:
-            print("Please number between 1-9 '{values}'.")
-    except:
-        print("Please number between 1-9, please try again.\n")
-        return False
-    return True
+#     try:
+#         [int(value) for value in values]
+#         if values not in continue_playing_options:
+#             print("Please number between 1-9 '{values}'.")
+#     except:
+#         print("Please number between 1-9, please try again.\n")
+#         return False
+#     return True
 
-def validate_row(values):
+# def validate_row(values):
     
-    try:
-        [int(value) for value in values]
-        if values not in continue_playing_options:
-            print("Please enter letter between A and I '{values}'.")
-    except:
-        print("Please enter letter between A and I, please try again.\n")
-        return False
-    return True
+#     try:
+#         [int(value) for value in values]
+#         if values not in continue_playing_options:
+#             print("Please enter letter between A and I '{values}'.")
+#     except:
+#         print("Please enter letter between A and I, please try again.\n")
+#         return False
+#     return True
 
 
 
