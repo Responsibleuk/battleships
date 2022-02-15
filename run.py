@@ -114,11 +114,11 @@ while turns > 0:
         if GUESS_BOARD[row][column] == "-" or GUESS_BOARD[row][column] == "X":
             prRed("Don't waste a shot you've already missed")
         elif HIDDEN_BOARD[row][column] == "*":
-            prGreen(f"Congratulations {username}, Direct hit, congratulations")
+            print("Congratulations {username}, Direct hit, congratulations")
             GUESS_BOARD[row][column] = "X"
             turns -= 1
             computer_guess(USER_BOARD)
-            user_score += 
+            user_score += 1
             
          else:
             print("Oh no, you missed")
@@ -126,6 +126,12 @@ while turns > 0:
             GUESS_BOARD[row][column] = "-"
             turns -= 1
             computer_guess(USER_BOARD)
+
+        if turns == 10:
+            print("You have used half your torpedoes")
+
+        if turns == 19:
+            print("Last shot, make it count")
 
         if count_hit_ships(GUESS_BOARD) == 5:
             print ("{username} your country owes you a debt of grattitude")
